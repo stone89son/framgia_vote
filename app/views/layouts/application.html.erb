@@ -1,14 +1,156 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FramgiaVote</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <title>Framgia Events</title>
+  <!-- Google font -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <%= yield %>
+  <div class="wrapper">
+    <div class="overlay"></div>
+      <!-- /.overlay -->
 
-</body>
+      <div class="user-box">
+        <ul>
+          <li><a class="get-popup login" href="#login">Login</a></li>
+          <li><a class="get-popup register" href="#register">Register</a></li>
+        </ul>
+      </div>
+      <!-- /.user-box -->
+
+      <div class="wrap-popup-box">
+        <div class="popup-box" id="login">
+          <div class="popup-header">
+            <span>Login</span>
+          </div>
+          <!-- /.popup-header -->
+
+          <div class="popup-content">
+            <form action="">
+              <input type="text" placeholder="ID or Adress...">
+              <input type="password" placeholder="Password...">
+              <button class="btn">Login</button>
+              <a href="#register" class="nav get-popup">Register</a>
+            </form>
+          </div>
+          <!-- /.popup-content -->
+        </div>
+        <!-- /.popup-box -->
+
+        <div class="popup-box" id="register">
+          <div class="popup-header">
+            <span>Register</span>
+          </div>
+          <!-- /.popup-header -->
+
+          <div class="popup-content">
+            <form action="">
+              <input type="text" placeholder="ID or Adress...">
+              <input type="password" placeholder="Password...">
+
+              <input type="checkbox" id="agree">
+              <label for="agree">I agree to the terms & conditions</label>
+              <span class="clear"></span>
+              <button class="btn">Register</button>
+            </form>
+          </div>
+          <!-- /.popup-content -->
+        </div>
+        <!-- /.popup-box -->
+
+      </div>
+      <!-- /.wrap-popup-box -->
+      <section class="description">
+        <div class="container">
+          <blockquote>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </blockquote>
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.description -->
+      <section class="awards">
+        <h3 class="awards-title">Các Giải Thưởng Phụ</h3>
+        <ul class="award-list">
+          <li>
+            <article class="entry-item">
+              <div class="entry-thumb">
+                <%= image_tag src="award-1.jpg" %>
+              </div>
+              <div class="entry-box">
+                <span class="icon-play"></span>
+                <h5><a href="#">Người tiến bộ nhanh nhất về kỹ năng làm việc và kết quả công việc</a></h5>
+              </div>
+            </article>
+            <!-- /.entry-item -->
+          </li>
+          <li>
+            <article class="entry-item">
+              <div class="entry-thumb">
+                <%= image_tag src="award-2.jpg" %>
+              </div>
+              <div class="entry-box">
+                <span class="icon-play"></span>
+                <h5><a href="#">Người tiến bộ nhanh nhất về kỹ năng làm việc và kết quả công việc</a></h5>
+              </div>
+            </article>
+            <!-- /.entry-item -->
+          </li>
+          <li>
+            <article class="entry-item">
+              <div class="entry-thumb">
+                <%= image_tag src="award-3.jpg" %>
+              </div>
+              <div class="entry-box">
+                <span class="icon-play"></span>
+                <h5><a href="#">Người tiến bộ nhanh nhất về kỹ năng làm việc và kết quả công việc</a></h5>
+              </div>
+            </article>
+            <!-- /.entry-item -->
+          </li>
+          <li>
+            <article class="entry-item">
+              <div class="entry-thumb">
+                <%= image_tag src="award-4.jpg" %>
+              </div>
+              <div class="entry-box">
+                <span class="icon-play"></span>
+                <h5><a href="#">Người tiến bộ nhanh nhất về kỹ năng làm việc và kết quả công việc</a></h5>
+              </div>
+            </article>
+            <!-- /.entry-item -->
+          </li>
+          <li>
+            <article class="entry-item">
+              <div class="entry-thumb">
+                <%= image_tag src="award-5.jpg" %>
+              </div>
+              <div class="entry-box">
+                <span class="icon-play"></span>
+                <h5><a href="#">Người tiến bộ nhanh nhất về kỹ năng làm việc và kết quả công việc</a></h5>
+              </div>
+            </article>
+            <!-- /.entry-item -->
+          </li>
+        </ul>
+      </section>
+      <!-- .awards -->
+      <footer id="main-footer">
+        <div class="container">
+          <div class="bottom-logo"><a href="#"><%= image_tag src="logo.png" %></a></div>
+          <p class="copyright">© 2015 Framgia, Inc. All rights reserved.</p>
+        </div>
+        <!-- /.container -->
+      </footer>
+      <!-- /#main-footer -->
+    </div>
+    <!-- /.wrapper -->
+  </body>
 </html>

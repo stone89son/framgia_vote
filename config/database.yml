@@ -15,7 +15,6 @@ default: &default
   pool: 5
   username: root
   password: '123456'
-  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -49,6 +48,8 @@ test:
 #
 production:
   <<: *default
-  database: framgia_vote_production
-  username: framgia_vote
-  password: <%= ENV['FRAMGIA_VOTE_DATABASE_PASSWORD'] %>
+  database: <%= ENV["DATABASE_NAME"] %>
+  host: <%= ENV["DATABASE_HOSTNAME"] %>
+  port: 3306
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
