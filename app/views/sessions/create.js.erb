@@ -1,0 +1,5 @@
+<% if current_user %>
+window.location.href = "<%= root_path %>"
+<% else %>
+$("#login-form").html("<%=j render "sessions/sign_in_form" %>")
+<% end %>

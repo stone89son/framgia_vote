@@ -1,0 +1,7 @@
+<%= render "shared/flash_messages" %>
+<%= form_for @user, url: session_path(:user), remote: true do |f| %>
+  <p><span>Email</span><%= f.text_field :email %></p>
+  <p><span>Password</span><%= f.password_field :password %></p>
+  <p class="submit"><%= f.submit "Đăng nhập" %></p>
+<% end %>
+<div class="close-form"></div>

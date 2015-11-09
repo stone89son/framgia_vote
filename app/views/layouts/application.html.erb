@@ -1,156 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <title>FFA</title>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-  <title>Framgia Events</title>
-  <!-- Google font -->
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <%= yield %>
-  <div class="wrapper">
-    <div class="overlay"></div>
-      <!-- /.overlay -->
-
-      <div class="user-box">
-        <ul>
-          <li><a class="get-popup login" href="#login">Login</a></li>
-          <li><a class="get-popup register" href="#register">Register</a></li>
-        </ul>
-      </div>
-      <!-- /.user-box -->
-
-      <div class="wrap-popup-box">
-        <div class="popup-box" id="login">
-          <div class="popup-header">
-            <span>Login</span>
-          </div>
-          <!-- /.popup-header -->
-
-          <div class="popup-content">
-            <form action="">
-              <input type="text" placeholder="ID or Adress...">
-              <input type="password" placeholder="Password...">
-              <button class="btn">Login</button>
-              <a href="#register" class="nav get-popup">Register</a>
-            </form>
-          </div>
-          <!-- /.popup-content -->
-        </div>
-        <!-- /.popup-box -->
-
-        <div class="popup-box" id="register">
-          <div class="popup-header">
-            <span>Register</span>
-          </div>
-          <!-- /.popup-header -->
-
-          <div class="popup-content">
-            <form action="">
-              <input type="text" placeholder="ID or Adress...">
-              <input type="password" placeholder="Password...">
-
-              <input type="checkbox" id="agree">
-              <label for="agree">I agree to the terms & conditions</label>
-              <span class="clear"></span>
-              <button class="btn">Register</button>
-            </form>
-          </div>
-          <!-- /.popup-content -->
-        </div>
-        <!-- /.popup-box -->
-
-      </div>
-      <!-- /.wrap-popup-box -->
-      <section class="description">
-        <div class="container">
-          <blockquote>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </blockquote>
-        </div>
-        <!-- /.container -->
-      </section>
-      <!-- /.description -->
-      <section class="awards">
-        <h3 class="awards-title">Các Giải Thưởng Phụ</h3>
-        <ul class="award-list">
-          <li>
-            <article class="entry-item">
-              <div class="entry-thumb">
-                <%= image_tag src="award-1.jpg" %>
-              </div>
-              <div class="entry-box">
-                <span class="icon-play"></span>
-                <h5><a href="#">Người tiến bộ nhanh nhất về kỹ năng làm việc và kết quả công việc</a></h5>
-              </div>
-            </article>
-            <!-- /.entry-item -->
-          </li>
-          <li>
-            <article class="entry-item">
-              <div class="entry-thumb">
-                <%= image_tag src="award-2.jpg" %>
-              </div>
-              <div class="entry-box">
-                <span class="icon-play"></span>
-                <h5><a href="#">Người tiến bộ nhanh nhất về kỹ năng làm việc và kết quả công việc</a></h5>
-              </div>
-            </article>
-            <!-- /.entry-item -->
-          </li>
-          <li>
-            <article class="entry-item">
-              <div class="entry-thumb">
-                <%= image_tag src="award-3.jpg" %>
-              </div>
-              <div class="entry-box">
-                <span class="icon-play"></span>
-                <h5><a href="#">Người tiến bộ nhanh nhất về kỹ năng làm việc và kết quả công việc</a></h5>
-              </div>
-            </article>
-            <!-- /.entry-item -->
-          </li>
-          <li>
-            <article class="entry-item">
-              <div class="entry-thumb">
-                <%= image_tag src="award-4.jpg" %>
-              </div>
-              <div class="entry-box">
-                <span class="icon-play"></span>
-                <h5><a href="#">Người tiến bộ nhanh nhất về kỹ năng làm việc và kết quả công việc</a></h5>
-              </div>
-            </article>
-            <!-- /.entry-item -->
-          </li>
-          <li>
-            <article class="entry-item">
-              <div class="entry-thumb">
-                <%= image_tag src="award-5.jpg" %>
-              </div>
-              <div class="entry-box">
-                <span class="icon-play"></span>
-                <h5><a href="#">Người tiến bộ nhanh nhất về kỹ năng làm việc và kết quả công việc</a></h5>
-              </div>
-            </article>
-            <!-- /.entry-item -->
-          </li>
-        </ul>
-      </section>
-      <!-- .awards -->
-      <footer id="main-footer">
-        <div class="container">
-          <div class="bottom-logo"><a href="#"><%= image_tag src="logo.png" %></a></div>
-          <p class="copyright">© 2015 Framgia, Inc. All rights reserved.</p>
-        </div>
-        <!-- /.container -->
-      </footer>
-      <!-- /#main-footer -->
+  <header>
+    <div class="headerBgr">
     </div>
-    <!-- /.wrapper -->
-  </body>
+  </header>
+
+  <nav>
+    <div class="navBar container">
+      <div class="leftBar">
+        <ul>
+          <li><a class="selected" href="#">Trang chủ</a></li>
+          <li><a class="main-reward" href="#">Giải thưởng chính</a></li>
+          <li><a class="extra-reward" href="#">Giải thưởng phụ</a></li>
+        </ul>
+      </div>
+      <div class="centerBar">
+        <%= image_tag "logo.png" %>
+      </div>
+      <div class="rulerBar">
+        <a href="#">Thể lệ chương trình</a>
+      </div>
+      <% if current_user %>
+      <div class="rulerBar"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></div>
+      <% else %>
+      <div class="rightBar">
+        <ul>
+          <li><a id="signIn" href="#">Đăng nhập</a></li>
+          <li><a>/</a></li>
+          <li><a id="signUp" href="#">Đăng ký</a></li>
+        </ul>
+      </div>
+      <% end %>
+    </div>
+  </nav>
+
+  <section id="main-reward">
+    <div class="container reward">
+      <div class="titleReward">
+        <p>Các giải thưởng chính</p>
+      </div>
+      <div id="ca-container" class="ca-container">
+        <div class="slider1 ca-wrapper tabs">
+          <% @main_award.each_with_index do |award, index| %>
+          <div class="slide ca-item ca-item-<%= index + 1 %> <%= "active" if index == 0 %>" rel="tab<%= index + 1 %>" style="background: url('<%= award.canlidates.sample.banner_url %>')">
+            <p class="name-adward"><%= award.name %></p>
+            <div class="mask"></div>
+            <div class="ca-item-main">
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="tab_container detail-adward">
+<% @main_award.each_with_index do |award, index| %>
+        <div id="tab<%= index + 1 %>" class="tab_content">
+  <% award.canlidates.each do |canlidate| %>
+          <div class="team-adward">
+            <div class="team-img" style="background: url('<%= canlidate.banner_url %>')"></div>
+            <div class="team-content">
+              <p class="team-name"><%= canlidate.name %></p>
+              <p class="team-subTitle"><span>Khởi động - </span><%= canlidate.start_date.try(:strftime, "%d/%m/%y") %></p>
+              <p class="team-text"><%= canlidate.description %></p>
+              <a class="seeMore" rel="team<%= canlidate.id %>">See more</a>
+<% if current_user && !current_user.award_voted?(award) %>
+  <% if current_user.canlidate_voted?(canlidate) %>
+              <div class="vote active">voted</div>
+  <% else %>
+              <div class="vote"><%= link_to 'Vote now', votes_path(canlidate_id: canlidate.id), method: :post, style: "color: white;" %></div>
+  <% end %>
+<% else %>
+  <% if current_user && current_user.canlidate_voted?(canlidate) %>
+              <div class="vote active">voted</div>
+  <% end %>
+<% end %>
+            </div>
+            <div class="clr"></div>
+          </div>
+  <% end %>
+          <div class="clr"></div>
+          <div class="icon-close"></div>
+        </div>
+<% end %>
+      </div>
+    </div>
+  </section>
+
+  <section class="box-slogan">
+    <div class="container slogan">To honor individuals and groups who have made remarkable achievements in 2015</div>
+  </section>
+
+  <section class="img-slogan">
+  </section>
+<% if @vice_award.count > 0 %>
+  <section id="extra-reward">
+    <div class="container reward">
+      <div class="titleReward">
+        <p>Các giải thưởng phụ</p>
+      </div>
+      <div id="ca-container-2" class="ca-container">
+        <div class="slider1-1 ca-wrapper tabs">
+          <% @vice_award.each_with_index do |award, index| %>
+          <div class="slide ca-item ca-item-<%= index + 1 %> <%= "active" if index == 0 %>" rel="e-tab<%= index + 1 %>" style="background: url('<%= award.canlidates.sample.banner_url %>')">
+            <p class="name-adward"><%= award.name %></p>
+            <div class="mask"></div>
+            <div class="ca-item-main">
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="tab_container detail-adward">
+<% @vice_award.each_with_index do |award, index| %>
+        <div id="e-tab<%= index + 1 %>" class="tab_content">
+  <% award.canlidates.each do |canlidate| %>
+          <div class="team-adward">
+            <div class="team-img" style="background: url('<%= canlidate.banner_url %>')"></div>
+            <div class="team-content">
+              <p class="team-name"><%= canlidate.name %></p>
+              <p class="team-subTitle"><span>Khởi động - </span><%= canlidate.start_date.try(:strftime, "%d/%m/%y") %></p>
+              <p class="team-text"><%= canlidate.description %></p>
+              <a class="seeMore" rel="team<%= canlidate.id %>">See more</a>
+              <% if current_user && !current_user.award_voted?(award) %>
+  <% if current_user.canlidate_voted?(canlidate) %>
+              <div class="vote active">voted</div>
+  <% else %>
+              <div class="vote"><%= link_to 'Vote now', votes_path(canlidate_id: canlidate.id), method: :post, style: "color: white;" %></div>
+  <% end %>
+<% else %>
+  <% if current_user && current_user.canlidate_voted?(canlidate) %>
+              <div class="vote active">voted</div>
+  <% end %>
+<% end %>
+            </div>
+            <div class="clr"></div>
+          </div>
+  <% end %>
+          <div class="clr"></div>
+          <div class="icon-close"></div>
+        </div>
+<% end %>
+      </div>
+    </div>
+  </section>
+<% end %>
+  <div class＝"popup">
+    <div id="login-form" class="popup-form">
+      <%= render "sessions/sign_in_form" %>
+    </div>
+    <div id="signUp-form" class="popup-form">
+      <%= render "users/user_form" %>
+    </div>
+    <div id="box-rule" class="popup-form">
+      <div class="content-rule">
+        Thể lệ chương trình
+        ljsdoijgoij pjgoirjgoij jjgdf godfjgodfjg oij gadojgdsj
+      </div>
+      <div class="close-form"></div>
+    </div>
+<% Canlidate.all.each do |canlidate| %>
+    <div class="popup-form detail-team" id="team<%= canlidate.id %>">
+      <div class="d-team-adward">
+        <div class="d-team-img" style="background: url('<%= canlidate.banner_url %>')"></div>
+        <div class="d-team-content">
+          <p class="d-team-name"><%= canlidate.name %></p>
+          <p class="d-team-subTitle"><span>Khởi động - </span><%= canlidate.start_date.try(:strftime, "%d/%m/%y") %></p>
+          <p class="team-text"><%= canlidate.description %></p>
+        </div>
+        <div class="clr"></div>
+      </div>
+      <div class="close-form"></div>
+    </div>
+<% end %>
+    <div class="lean_overlay"></div>
+  </div>
+  <footer class="box-slogan">
+    <div class="container slogan">
+      <%= image_tag "footer-logo.png" %>
+      <p>© Copyright 2015 Framgia, Inc. All rights reserved</p>
+    </div>
+  </footer>
+
+  <div id="back-top">Top</div>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.slider1, .slider1-1').bxSlider({
+        slideWidth: 200,
+        minSlides: 2,
+        maxSlides: 4,
+        slideMargin: 30
+      });
+    });
+  </script>
+</body>
 </html>
