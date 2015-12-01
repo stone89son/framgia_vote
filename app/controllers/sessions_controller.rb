@@ -12,7 +12,7 @@ class SessionsController < Devise::SessionsController
 
   private
   def invalid_login_attempt
-    set_flash_message(:alert, :invalid)
+    flash.now[:notice] =  "Invalid email or password."
     @user = User.new
     respond_to do |format|
       format.js

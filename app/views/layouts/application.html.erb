@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>FFA</title>
+  <title>FAA</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= javascript_include_tag 'application' %>
@@ -20,7 +20,7 @@
     <div class="navBar container">
       <div class="leftBar">
         <ul>
-          <li><a class="selected" href="#">Trang chủ</a></li>
+          <li><a class= "intro" href="#">Giới Thiệu</a></li>
           <li><a class="main-reward" href="#">Giải thưởng chính</a></li>
           <li><a class="extra-reward" href="#">Giải thưởng phụ</a></li>
         </ul>
@@ -148,15 +148,51 @@
 <% end %>
   <div class＝"popup">
     <div id="login-form" class="popup-form">
-      <%= render "sessions/sign_in_form" %>
     </div>
     <div id="signUp-form" class="popup-form">
-      <%= render "users/user_form" %>
     </div>
     <div id="box-rule" class="popup-form">
       <div class="content-rule">
-        Thể lệ chương trình
-        ljsdoijgoij pjgoirjgoij jjgdf godfjgodfjg oij gadojgdsj
+        <p>Cách thức bình chọn giải thưởng FAA 2015 như sau:</p>
+        <ul>
+          <li>Truy cập trang web http://www.faa.framgia.vn</li>
+          <li>Đăng ký tên truy cập để có thể tham gia bình chọn. Lưu ý: chỉ email người dùng nội bộ @framgia.com mới được tính kết quả hợp lệ.</li>
+          <li>Nhấn nút Vote để bình chọn cho đề cử mà bạn cho là xứng đáng nhất cho mỗi giải thưởng. Mỗi tên truy cập được phép bình chọn nhiều lần, hệ thống chỉ tính lần vote cuối cùng của từng user.</li>
+          <li>Thời gian bình chọn: Từ 01/12/2015 đến hết 10/12/2015.</li>
+          <li>Đối với 5 giải thưởng chính, kết quả bình chọn sẽ được tính trung bình cộng với số điểm của BGĐ chấm cho từng đề cử (Điểm bình chọn và điểm từ BGĐ đều chiếm trọng số 50%). Đối với giải thưởng phụ, kết quả bình chọn tính theo số lượng lượt vote trên website.</li>
+        </ul>
+      </div>
+      <div class="close-form"></div>
+    </div>
+    <div id="intro" class="popup-form">
+      <div class="content-rule">
+        <p>
+        Bước sang năm thứ ba của chặng đường chinh phục thế giới, Framgia đang từng bước chứng minh vị trí của mình với những đối thủ đầu ngành, bằng những bước tiến dài cả về nhân lực lẫn chất lượng kỹ thuật. Năm 2015 lại ghi dấu một niên khóa viên mãn của doanh nghiệp trẻ, khi dang rộng vòng tay đón thêm gần 200 kỹ sư lập trình tài giỏi, đưa con số thành viên của gia đình Framgia Việt Nam lên đến 400 người, - một con số đáng để sửng sốt cho một thương hiệu mới 3 tuổi đời, với quốc tịch đang dần mở rộng ra nhiều nước Châu Á. Tháng 12 năm 2015, hơn 400 con tim lại cùng chung nhau niềm hân hoan chào đón sự ra đời của Framgia Philippines và Framgia Bangladesh. Hướng về tương lai, cái tên Framgia như một đôi cánh sải rộng tung bay, vững vàng băng qua những đỉnh cao của thành công và trí tuệ.
+        </p>
+        <p>
+          Để đạt được ước vọng lớn lao đó, là biết bao những cống hiến miệt mài của hàng trăm khối óc trẻ, những con tim say mê công nghệ, và những bàn tay vững chãi khát khao san bằng mọi thách thức. Với lòng yêu nghề sẵn có hòa cùng tinh thần ham học hỏi, không ngừng tiếp thu kiến thức mới, vị trí ngày nay của Framgia tại thị trường công nghệ Việt Nam như một thành quả hiển nhiên cho những nỗ lực quý giá của đội ngũ kỹ sư cũng như toàn thể nhân viên Framgia. Để ghi nhận, tri ân, trân quý toàn bộ những đóng góp thầm lặng ấy, giải thưởng FAA (Framgia Annual Awards) được hình thành dựa trên những đánh giá công bằng nhất, khách quan nhất, dân chủ nhất và trịnh trọng nhất.
+        </p>
+        <p>
+          FAA 2015 tôn vinh những gương mặt, nhóm kỹ thuật có thành tích nổi bật, cũng như năng nổ hăng hái trong những hoạt động nội bộ. Đối tượng hướng đến của giải thưởng là toàn bộ những con người hiện đang công tác, cống hiến hết mình cho sự phát triển của Framgia Việt Nam, bao gồm cả nhân viên chính thức, nhân viên thử việc, nhân viên thực tập, và nhân viên làm việc bán thời gian… Năm giải thưởng chính được đưa ra tranh cử bao gồm:
+        </p>
+        <ul>
+          <li>MVP (Most Valuable Person)</li>
+          <li>Dự án của năm</li>
+          <li>Leader của năm</li>
+          <li>Chương trình của năm</li>
+          <li>Nhân viên chuyên cần của năm</li>
+        </ul>
+        <p>Bên cạnh đó cũng có những giải thưởng phụ để cộng đồng bình chọn như:</p>
+        <ul>
+          <li>Giải Long Phượng Framgia (Cặp đôi ăn ý trong công việc)</li>
+          <li>Giải Tù và Framgia (Người nổi tiếng với tinh thần hỗ trợ đồng nghiệp)</li>
+          <li>Giải Next-top Model Framgia (Người có phong cách thời thượng nhất)</li>
+          <li>Giải Câu lạc bộ Framgia (Câu lạc bộ hoạt động hiệu quả nhất)</li>
+          <li>Giải Nghệ sĩ Framgia (Người có uy tín trong phong trào văn hóa nghệ thuật, tích cực tham gia các hoạt động văn nghệ nội bộ)</li>
+        </ul>
+        <p>
+           Mỗi giải thưởng đều có 5 đề cử được đề xuất và chọn lọc kỹ càng. Với hy vọng chọn ra gương mặt xứng đáng nhất cho từng hạng mục, giải thưởng được đưa vào bình chọn thông qua website: www.faa.framgia.vn. Từ năm 2015, giải FAA được xây dựng hoàn chỉnh từ cơ cấu đánh giá đến cách thức thực hiện, trở thành giải thưởng thường niên nhằm khích lệ tinh thần những cá nhân có thành tích nổi bật qua một năm cống hiến. Cũng nhân dịp này, đêm trao giải FAA cũng là đêm hội ngộ, tổng kết lại chặng đường đã đi của Framgia, với nhiều màn biểu diễn nghệ thuật hấp dẫn, hoành tráng.
+        </p>
       </div>
       <div class="close-form"></div>
     </div>
@@ -193,6 +229,50 @@
         slideMargin: 30
       });
     });
+    $(function(){
+      $(document).on('click', '.seeMore', function(e){
+        var d_seemore = $(this).attr("rel");
+        $("#"+d_seemore).show();
+        $(".lean_overlay").show();
+        $('html,body').animate({
+            scrollTop: $("body").offset().top},
+            'slow');
+      });
+      $("#signIn").click(function(){
+        $(".alert").html("");
+        $('#login-form').html("<%=j render "sessions/sign_in_form" %>");
+        $("#login-form").show();
+        $(".lean_overlay").show();
+      });
+      $("#signUp").click(function(){
+        $(".alert").html("");
+        $("#signUp-form").html("<%=j render "users/user_form" %>")
+        $("#signUp-form").show();
+        $(".lean_overlay").show();
+      });
+      $(".rulerBar").click(function(e){
+        $("#box-rule").show();
+        $(".lean_overlay").show();
+      });
+      $(".login-help").click(function(e){
+        $("#login-form").hide();
+        $("#forgot-pass").show();
+      });
+
+      $(".intro").click(function(e){
+        $("#intro").show();
+        $(".lean_overlay").show();
+      });
+
+      $(document).on('click', '.close-form', function(e){
+        $(".lean_overlay").hide();
+        $(this).parent().hide();
+      });
+      $(".lean_overlay").click(function(){
+        $(".popup-form").hide();
+        $(this).hide();
+      });
+    })
   </script>
 </body>
 </html>

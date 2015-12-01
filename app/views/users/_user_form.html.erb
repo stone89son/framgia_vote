@@ -1,9 +1,12 @@
 <%= render "shared/flash_messages" %>
 <%= form_for @user, remote: true do |f| %>
   <p><span>Name</span><%= f.text_field :name %></p>
-  <p><span>Email</span><%= f.text_field :email %></p>
-  <p><span>Password</span><%= f.password_field :password %></p>
-  <p><span>Re-</br>password</span><%= f.password_field :password_confirmation %></p>
+  <p><span>Email</span><%= f.text_field :email %>
+  <span class="validation-error"><%= f.full_error_messages_for(:email).first %></span></p>
+  <p><span>Password</span><%= f.password_field :password %>
+  <span class="validation-error"><%= f.full_error_messages_for(:password).first %></span></p>
+  <p><span>Re-</br>password</span><%= f.password_field :password_confirmation %>
+  <span class="validation-error"><%= f.full_error_messages_for(:password_confirmation).first %></span></p>
   <p class="submit"><%= f.submit "Đăng ký" %></p>
 <% end %>
 <div class="close-form"></div>

@@ -72,49 +72,17 @@ $(function(){
 
   // popup
     // form login
-    $(function(){
-      $(document).on('click', '.seeMore', function(e){
-        var d_seemore = $(this).attr("rel");
-        $("#"+d_seemore).show();
-        $(".lean_overlay").show();
-        $('html,body').animate({
-            scrollTop: $("body").offset().top},
-            'slow');
-      });
-      $("#signIn").click(function(){
-        $("#login-form").show();
-        $(".lean_overlay").show();
-      });
-      $("#signUp").click(function(){
-        $("#signUp-form").show();
-        $(".lean_overlay").show();
-      });
-      $(".rulerBar").click(function(){
-        $("#box-rule").show();
-        $(".lean_overlay").show();
-      });
-      $(".login-help").click(function(){
-        $("#login-form").hide();
-        $("#forgot-pass").show();
-      });
 
-      $(".close-form").click(function(){
-        $(".lean_overlay").hide();
-        $(this).parent().hide();
-      });
-      $(".lean_overlay").click(function(){
-        $(".popup-form").hide();
-        $(this).hide();
-      });
-    })
 
     // Scroll to content of menu
-    $(".main-reward").click(function() {
+    $(".main-reward").click(function(e) {
+        e.preventDefault();
         $('html,body').animate({
             scrollTop: $("#main-reward").offset().top - 60},
             'slow');
     });
-    $(".extra-reward").click(function() {
+    $(".extra-reward").click(function(e) {
+        e.preventDefault();
         $('html,body').animate({
             scrollTop: $("#extra-reward").offset().top},
             'slow');

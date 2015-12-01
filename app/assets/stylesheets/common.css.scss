@@ -391,6 +391,7 @@ footer {
         font-size: 13px;
         margin-top: 10px;
         color: #F00;
+        width: 100%;
       }
     }
     input {
@@ -532,6 +533,7 @@ section {
         margin-bottom: 5px;
       }
       .d-team-subTitle {
+        margin-bottom: 0;
         font-size: 13px;
         color: #ff6022;
         span {
@@ -551,7 +553,6 @@ section {
         font-weight: 300;
         color: #7d7d7d;
         position: relative;
-        max-height: 155px;
         overflow: auto;
         padding-top: 70px;
         line-height: 17px;
