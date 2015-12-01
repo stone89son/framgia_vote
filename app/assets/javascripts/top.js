@@ -13,9 +13,10 @@ $(function(){
     // Opacity for item in slide
 
     $(document).on('click', '.ca-wrapper .ca-item', function(e){
-      $(".ca-item").addClass("slideOpacity");
       e.preventDefault();
-      $(".noOpacity").removeClass("noOpacity");
+      hide_slide = $(this).attr("hide_class");
+      $("." + hide_slide).addClass("slideOpacity");
+      $("." + hide_slide).removeClass("noOpacity");
       $(this).addClass("noOpacity");
       $(".textSelected").removeClass("textSelected");
       $(this).find(".name-adward").addClass("textSelected");
@@ -31,7 +32,8 @@ $(function(){
       $('html,body').animate({
         scrollTop: a.offset().top - 80},
         'slow');
-      $(".tab_content").hide();
+      hide_content = a.attr("hide_content");
+      $("." + hide_content).hide();
       var activeTab = $(this).attr("rel");
       $("#"+activeTab).fadeIn();
 

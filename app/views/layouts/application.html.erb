@@ -53,7 +53,7 @@
       <div id="ca-container" class="ca-container">
         <div class="slider1 ca-wrapper tabs">
           <% @main_award.each_with_index do |award, index| %>
-          <div class="slide ca-item ca-item-<%= index + 1 %> <%= "active" if index == 0 %>" rel="tab<%= index + 1 %>" style="background: url('<%= award.canlidates.sample.banner_url %>')">
+          <div class="slide ca-item ca-item-<%= index + 1 %> <%= "active" if index == 0 %>" rel="tab<%= index + 1 %>" style="background: url('<%= award.canlidates.sample.banner_url %>')" hide_class="slide" hide_content="main_content">
             <p class="name-adward"><%= award.name %></p>
             <div class="mask"></div>
             <div class="ca-item-main">
@@ -64,7 +64,7 @@
       </div>
       <div class="tab_container detail-adward">
 <% @main_award.each_with_index do |award, index| %>
-        <div id="tab<%= index + 1 %>" class="tab_content">
+        <div id="tab<%= index + 1 %>" class="tab_content main_content">
   <% award.canlidates.each do |canlidate| %>
           <div class="team-adward">
             <div class="team-img" style="background: url('<%= canlidate.banner_url %>')"></div>
@@ -73,15 +73,11 @@
               <p class="team-subTitle"><span>Khởi động - </span><%= canlidate.start_date.try(:strftime, "%d/%m/%y") %></p>
               <p class="team-text"><%= canlidate.description %></p>
               <a class="seeMore" rel="team<%= canlidate.id %>">See more</a>
-<% if current_user && !current_user.award_voted?(award) %>
+<% if current_user %>
   <% if current_user.canlidate_voted?(canlidate) %>
               <div class="vote active">voted</div>
   <% else %>
               <div class="vote"><%= link_to 'Vote now', votes_path(canlidate_id: canlidate.id), method: :post, style: "color: white;" %></div>
-  <% end %>
-<% else %>
-  <% if current_user && current_user.canlidate_voted?(canlidate) %>
-              <div class="vote active">voted</div>
   <% end %>
 <% end %>
             </div>
@@ -111,7 +107,7 @@
       <div id="ca-container-2" class="ca-container">
         <div class="slider1-1 ca-wrapper tabs">
           <% @vice_award.each_with_index do |award, index| %>
-          <div class="slide ca-item ca-item-<%= index + 1 %> <%= "active" if index == 0 %>" rel="e-tab<%= index + 1 %>" style="background: url('<%= award.canlidates.sample.banner_url %>')">
+          <div class="slide1 ca-item ca-item-<%= index + 1 %> <%= "active" if index == 0 %>" rel="e-tab<%= index + 1 %>" style="background: url('<%= award.canlidates.sample.banner_url %>')" hide_class="slide1" hide_content="vice_content">
             <p class="name-adward"><%= award.name %></p>
             <div class="mask"></div>
             <div class="ca-item-main">
@@ -122,7 +118,7 @@
       </div>
       <div class="tab_container detail-adward">
 <% @vice_award.each_with_index do |award, index| %>
-        <div id="e-tab<%= index + 1 %>" class="tab_content">
+        <div id="e-tab<%= index + 1 %>" class="tab_content vice_content">
   <% award.canlidates.each do |canlidate| %>
           <div class="team-adward">
             <div class="team-img" style="background: url('<%= canlidate.banner_url %>')"></div>
@@ -131,15 +127,11 @@
               <p class="team-subTitle"><span>Khởi động - </span><%= canlidate.start_date.try(:strftime, "%d/%m/%y") %></p>
               <p class="team-text"><%= canlidate.description %></p>
               <a class="seeMore" rel="team<%= canlidate.id %>">See more</a>
-              <% if current_user && !current_user.award_voted?(award) %>
+<% if current_user %>
   <% if current_user.canlidate_voted?(canlidate) %>
               <div class="vote active">voted</div>
   <% else %>
               <div class="vote"><%= link_to 'Vote now', votes_path(canlidate_id: canlidate.id), method: :post, style: "color: white;" %></div>
-  <% end %>
-<% else %>
-  <% if current_user && current_user.canlidate_voted?(canlidate) %>
-              <div class="vote active">voted</div>
   <% end %>
 <% end %>
             </div>
