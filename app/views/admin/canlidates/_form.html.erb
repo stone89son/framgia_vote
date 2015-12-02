@@ -1,0 +1,34 @@
+<%= form_for [:admin, @canlidate] do |f| %>
+  <% if @canlidate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@canlidate.errors.count, "error") %> prohibited this canlidate from being saved:</h2>
+
+      <ul>
+      <% @canlidate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table>
+    <tr>
+      <td>Name</td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td><%= f.text_area :description, cols: 50, rows: 30 %></td>
+    </tr>
+    <tr>
+      <td>Banner</td>
+      <td><%= f.file_field :banner %></td>
+    </tr>
+    <tr>
+      <td>Award</td>
+      <td><%= f.collection_select :award_id, Award.all, :id, :name %></td>
+    </tr>
+  </table>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

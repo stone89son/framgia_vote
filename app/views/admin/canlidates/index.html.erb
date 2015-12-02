@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Admin Canlidates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @canlidates.each do |canlidate| %>
+      <tr>
+        <td><%= canlidate.id %></td>
+        <td><%= canlidate.name %></td>
+        <td><%= link_to 'Show', admin_canlidate_path(canlidate) %></td>
+        <td><%= link_to 'Edit', edit_admin_canlidate_path(canlidate) %></td>
+        <td><%= link_to 'Destroy', admin_canlidate_path(canlidate), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Canlidate', new_admin_canlidate_path %>

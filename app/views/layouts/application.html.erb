@@ -53,10 +53,10 @@
       <div id="ca-container" class="ca-container">
         <div class="slider1 ca-wrapper tabs">
           <% @main_award.each_with_index do |award, index| %>
-          <div class="slide ca-item ca-item-<%= index + 1 %> <%= "active" if index == 0 %>" rel="tab<%= index + 1 %>" style="background: url('<%= award.canlidates.sample.banner_url %>')" hide_class="slide" hide_content="main_content">
+          <div class="slide ca-item ca-item-<%= index + 1 %> <%= "active" if index == 0 %>" rel="tab<%= index + 1 %>" hide_class="slide" hide_content="main_content">
             <p class="name-adward"><%= award.name %></p>
             <div class="mask"></div>
-            <div class="ca-item-main">
+            <div class="ca-item-main" style="background: url('<%= award.canlidates.sample.banner_url %>')">
             </div>
           </div>
           <% end %>
@@ -71,7 +71,7 @@
             <div class="team-content">
               <p class="team-name"><%= canlidate.name %></p>
               <p class="team-subTitle"><span>Khởi động - </span><%= canlidate.start_date.try(:strftime, "%d/%m/%y") %></p>
-              <p class="team-text"><%= canlidate.description %></p>
+              <div class="team-text"><%= canlidate.description.try(:html_safe) %></div>
               <a class="seeMore" rel="team<%= canlidate.id %>">See more</a>
 <% if current_user %>
   <% if current_user.canlidate_voted?(canlidate) %>
@@ -107,10 +107,10 @@
       <div id="ca-container-2" class="ca-container">
         <div class="slider1-1 ca-wrapper tabs">
           <% @vice_award.each_with_index do |award, index| %>
-          <div class="slide1 ca-item ca-item-<%= index + 1 %> <%= "active" if index == 0 %>" rel="e-tab<%= index + 1 %>" style="background: url('<%= award.canlidates.sample.banner_url %>')" hide_class="slide1" hide_content="vice_content">
+          <div class="slide1 ca-item ca-item-<%= index + 1 %> <%= "active" if index == 0 %>" rel="e-tab<%= index + 1 %>"  hide_class="slide1" hide_content="vice_content">
             <p class="name-adward"><%= award.name %></p>
             <div class="mask"></div>
-            <div class="ca-item-main">
+            <div class="ca-item-main" style="background: url('<%= award.canlidates.sample.banner_url %>')">
             </div>
           </div>
           <% end %>
@@ -125,7 +125,7 @@
             <div class="team-content">
               <p class="team-name"><%= canlidate.name %></p>
               <p class="team-subTitle"><span>Khởi động - </span><%= canlidate.start_date.try(:strftime, "%d/%m/%y") %></p>
-              <p class="team-text"><%= canlidate.description %></p>
+              <div class="team-text"><%= canlidate.description.try(:html_safe) %></div>
               <a class="seeMore" rel="team<%= canlidate.id %>">See more</a>
 <% if current_user %>
   <% if current_user.canlidate_voted?(canlidate) %>
@@ -155,7 +155,7 @@
       <div class="content-rule">
         <p>Cách thức bình chọn giải thưởng FAA 2015 như sau:</p>
         <ul>
-          <li>Truy cập trang web http://www.faa.framgia.vn</li>
+          <li>Truy cập trang web <a href="http://faa.framgia.vn/">http://faa.framgia.vn/</a></li>
           <li>Đăng ký tên truy cập để có thể tham gia bình chọn. Lưu ý: chỉ email người dùng nội bộ @framgia.com mới được tính kết quả hợp lệ.</li>
           <li>Nhấn nút Vote để bình chọn cho đề cử mà bạn cho là xứng đáng nhất cho mỗi giải thưởng. Mỗi tên truy cập được phép bình chọn nhiều lần, hệ thống chỉ tính lần vote cuối cùng của từng user.</li>
           <li>Thời gian bình chọn: Từ 01/12/2015 đến hết 10/12/2015.</li>
@@ -173,7 +173,8 @@
           Để đạt được ước vọng lớn lao đó, là biết bao những cống hiến miệt mài của hàng trăm khối óc trẻ, những con tim say mê công nghệ, và những bàn tay vững chãi khát khao san bằng mọi thách thức. Với lòng yêu nghề sẵn có hòa cùng tinh thần ham học hỏi, không ngừng tiếp thu kiến thức mới, vị trí ngày nay của Framgia tại thị trường công nghệ Việt Nam như một thành quả hiển nhiên cho những nỗ lực quý giá của đội ngũ kỹ sư cũng như toàn thể nhân viên Framgia. Để ghi nhận, tri ân, trân quý toàn bộ những đóng góp thầm lặng ấy, giải thưởng FAA (Framgia Annual Awards) được hình thành dựa trên những đánh giá công bằng nhất, khách quan nhất, dân chủ nhất và trịnh trọng nhất.
         </p>
         <p>
-          FAA 2015 tôn vinh những gương mặt, nhóm kỹ thuật có thành tích nổi bật, cũng như năng nổ hăng hái trong những hoạt động nội bộ. Đối tượng hướng đến của giải thưởng là toàn bộ những con người hiện đang công tác, cống hiến hết mình cho sự phát triển của Framgia Việt Nam, bao gồm cả nhân viên chính thức, nhân viên thử việc, nhân viên thực tập, và nhân viên làm việc bán thời gian… Năm giải thưởng chính được đưa ra tranh cử bao gồm:
+          FAA 2015 tôn vinh những gương mặt, nhóm kỹ thuật có thành tích nổi bật, cũng như năng nổ hăng hái trong những hoạt động nội bộ. Đối tượng hướng đến của giải thưởng là toàn bộ những con người hiện đang công tác, cống hiến hết mình cho sự phát triển của Framgia Việt Nam, bao gồm cả nhân viên chính thức, nhân viên thử việc, nhân viên thực tập, và nhân viên làm việc bán thời gian… </p>
+        <p>Năm giải thưởng chính được đưa ra tranh cử bao gồm:
         </p>
         <ul>
           <li>MVP (Most Valuable Person)</li>
@@ -203,7 +204,14 @@
         <div class="d-team-content">
           <p class="d-team-name"><%= canlidate.name %></p>
           <p class="d-team-subTitle"><span>Khởi động - </span><%= canlidate.start_date.try(:strftime, "%d/%m/%y") %></p>
-          <p class="team-text"><%= canlidate.description %></p>
+          <div class="team-text"><%= canlidate.description.try(:html_safe) %></div>
+<% if current_user %>
+  <% if current_user.canlidate_voted?(canlidate) %>
+              <div class="vote active">voted</div>
+  <% else %>
+              <div class="vote"><%= link_to 'Vote now', votes_path(canlidate_id: canlidate.id), method: :post, style: "color: white;" %></div>
+  <% end %>
+<% end %>
         </div>
         <div class="clr"></div>
       </div>
@@ -234,9 +242,7 @@
         var d_seemore = $(this).attr("rel");
         $("#"+d_seemore).show();
         $(".lean_overlay").show();
-        $('html,body').animate({
-            scrollTop: $("body").offset().top},
-            'slow');
+        $("#"+d_seemore).css("top", $(document).scrollTop() + 100);
       });
       $("#signIn").click(function(){
         $(".alert").html("");
