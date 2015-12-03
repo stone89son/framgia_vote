@@ -1,0 +1,2 @@
+$("#<%= "e-" unless @award.main_flg %>tab<%= @award.try(:id) %>").html("<%=j render "shared/award_detail", award: @award %>");
+$("#canlidate_popup").html("<%=j render "shared/canlidate_popup" %>");

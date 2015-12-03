@@ -3,13 +3,16 @@ class VotesController < ApplicationController
 
   def create
     canlidate = Canlidate.find params[:canlidate_id]
-    award = canlidate.award
-    vote = current_user.votes.where(award: award).first
+    @award = canlidate.award
+    vote = current_user.votes.where(award: @award).first
     if vote
       vote.update_attributes(canlidate: canlidate)
     else
-      current_user.votes.create(award: award, canlidate: canlidate)
+      current_user.votes.create(award: @award, canlidate: canlidate)
     end
-    redirect_to root_path
+    respond_to do |format|
+      format.js
+      format.html {redirect_to root_path}
+    end
   end
 end
