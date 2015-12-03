@@ -73,6 +73,6 @@ class Admin::CanlidatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def canlidate_params
-      params.require(:canlidate).permit(:name, :description, :banner, :award_id)
+      params.require(:canlidate).permit(:name, :description, :banner, :award_id, :start)
     end
 end

@@ -4,7 +4,7 @@
         <div class="d-team-img" style="background: url('<%= canlidate.banner_url %>')"></div>
         <div class="d-team-content">
           <p class="d-team-name"><%= canlidate.name %></p>
-          <p class="d-team-subTitle"><span>Khởi động - </span><%= canlidate.start_date.try(:strftime, "%d/%m/%y") %></p>
+          <p class="d-team-subTitle"><span><%= canlidate.start %></span></p>
           <div class="team-text"><%= canlidate.description.try(:html_safe) %></div>
 <% if current_user %>
   <% if current_user.canlidate_voted?(canlidate) %>

@@ -1,5 +1,8 @@
     // fix scroll navigation
 $(function(){
+    $(document).on('click', '.vote', function(){
+      $(this).children().click();
+    })
     var offset = $('nav').offset().top;
     $(window).scroll(function() {
       if($(this).scrollTop() >= offset) {
