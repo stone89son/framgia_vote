@@ -3,14 +3,17 @@ $(function(){
     $(document).on('click', '.vote', function(){
       $(this).children().click();
     })
-    var offset = $('nav').offset().top;
-    $(window).scroll(function() {
-      if($(this).scrollTop() >= offset) {
-       $('nav').addClass('isFixed');
-      } else {
-        $('nav').removeClass('isFixed');
-      }
-    });
+
+    if ($('nav').offset() != undefined) {
+      var offset = $('nav').offset().top;
+      $(window).scroll(function() {
+        if($(this).scrollTop() >= offset) {
+         $('nav').addClass('isFixed');
+        } else {
+          $('nav').removeClass('isFixed');
+        }
+      });
+    }
 
 
     // Opacity for item in slide

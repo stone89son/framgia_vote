@@ -6,6 +6,12 @@ class User < ActiveRecord::Base
 
   validate :framgia_email
   FRAMGIA_EMAIL = ["kazunari.fujimoto@framgia.com",
+"hiroaki.ishida@framgia.co.jp",
+"hoang.truong.minh@framgia.com",
+"hoang.cong.minh@framgia.com",
+"nguyen.thi.hue@framgia.com",
+"chu.anh.tuan@framgia.com",
+"nguyen.thi.hoa@framgia.com",
 "makoto.hirai@framgia.com",
 "norifumi.homma@framgia.com",
 "vu.xuan.dung@framgia.com",
@@ -402,6 +408,12 @@ class User < ActiveRecord::Base
 "dinh.danh.phu@framgia.com",
 "le.tuan.minh@framgia.com",
 "tran.thu.trang@framgia.com",
+"nguyen.van.dung@framgia.com",
+"hoang.dang.khanh@framgia.com",
+"nguyen.dinh.huan@framgia.com",
+"hoang.van.quan@framgia.com",
+"nguyen.thi.tuyen@framgia.com",
+"doan.viet.tung@framgia.com",
 ]
 
   MANAGER = [

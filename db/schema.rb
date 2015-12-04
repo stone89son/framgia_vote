@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126060705) do
+ActiveRecord::Schema.define(version: 20151203064144) do
 
   create_table "awards", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -26,11 +26,11 @@ ActiveRecord::Schema.define(version: 20151126060705) do
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
     t.string   "banner",      limit: 255
-    t.date     "start_date"
     t.integer  "mark",        limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "award_id",    limit: 4
+    t.string   "start",       limit: 255
   end
 
   create_table "users", force: :cascade do |t|

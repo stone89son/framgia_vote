@@ -1,0 +1,20 @@
+<% @awards.each do |award| %>
+<div><%= award.name %></div>
+<canvas id="myChart<%= award.id %>" width="400" height="400"></canvas>
+<script type="text/javascript">
+$(function(){
+  colors = ["red", "yellow", "green", "blue", "brown" ];
+  var objs = [];
+  <% award.canlidates.each_with_index do |canlidate, index| %>
+  var obj = new Object;
+  obj["value"] = <%= canlidate.votes.count %>;
+  obj["color"] = colors[<%= index %>];
+  obj["label"] = "<%= canlidate.name %>";
+  objs.push(obj);
+  <% end %>
+  var data = objs;
+  var ctx = $("#myChart<%= award.id %>").get(0).getContext("2d");
+  var myPieChart = new Chart(ctx).Pie(data);
+})
+</script>
+<% end %>

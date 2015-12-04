@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :votes, only: :create
   namespace :admin do
     resources :canlidates
+    resources :votes, only: :index
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
